@@ -1,114 +1,241 @@
-# 📋 Modern Task Management Dashboard
+# 📋 Task Management Dashboard
 
-A sleek, highly interactive, and production-ready **Task Management Dashboard** designed with absolute focus on usability, fluid visual design, and clean architecture.
+<p align="center">
+  <img src="images1/dashboard.png" width="100%" alt="Dashboard Preview"/>
+</p>
 
-This full-stack application provides robust user authentication, an elegant dashboard viewport, multi-view task filters, detailed activity transaction feeds, and direct relational SQLite3 schema synchronization.
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+
+</p>
 
 ---
 
-## 🎨 Interface Preview
+## 📖 Overview
 
-Below is a preview mockup of the high-fidelity, responsive user interface designed with a premium, accessible aesthetic:
-
-![Task Management Dashboard Mockup](src/assets/images/dashboard_mockup_1783679955956.jpg)
+Task Management Dashboard is a full-stack web application built using **Python, HTML, CSS, JavaScript, and SQLite**. It helps users organize, track, and manage tasks efficiently through an intuitive interface with analytics, calendar integration, and secure authentication.
 
 ---
 
 ## ✨ Features
 
-- **🔐 Dual-State Authentication**: Real login and registration system with secure password hashing and stateful browser session persistence.
-- **📅 Dynamic Task Management & Calendar View**: Easily create, update, check off, and delete tasks. View scheduled items seamlessly on an interactive calendar widget.
-- **⚡ Interactive Filter Engine**: Instant client-side search query parsing, priority segregation (Low, Medium, High), status categorization (Pending, Completed), and time period segmentation.
-- **🌓 Adaptive Theme Modes**: Instant one-click toggle between standard high-contrast light mode (Warm Off-white & Amber accents) and an eye-safe slate dark mode.
-- **📊 Real-time Analytics Dashboard**: Live task counts, performance metric cards, completion ratios, and dynamic activity charts.
-- **📂 Live SQLite3 Schema Explorer**: Real-time table analyzer showing integrated relational state tables (`tasks` and `users`) directly from the underlying SQLite3 system.
-- **🔔 Action Confirmation Modals**: Secure destructive actions (like task deletion or logging out) behind customized, elegant animated modals to prevent accidental loss of user state.
+### 🔐 Authentication
+- User Registration
+- Secure Login
+- Password Hashing
+- Session Management
+
+### ✅ Task Management
+- Create Tasks
+- Update Tasks
+- Delete Tasks
+- Search & Filter Tasks
+- Priority & Category Management
+- Task Status Tracking
+
+### 📊 Dashboard
+- Live Task Statistics
+- Weekly Productivity Charts
+- Recent Activity Feed
+- Task Completion Overview
+
+### 📅 Calendar
+- Interactive Calendar
+- Due Date Tracking
+- Schedule Management
+
+### 📈 Analytics
+- Productivity Insights
+- Category Distribution
+- Weekly Completion Reports
+
+### 🗄️ Database Explorer
+- View Users Table
+- View Tasks Table
+- SQLite Database Monitoring
+
+### ⚙️ Settings
+- Profile Management
+- Theme Switching
+- Workspace Preferences
 
 ---
 
 ## 🛠️ Technology Stack
 
-### **Frontend**
-* **Core**: Modern HTML5, ES6+ JavaScript, DOM Manipulation.
-* **Styling**: Tailwind CSS (via modern compiled stylesheet integration).
-* **Icons**: [Lucide Icons](https://lucide.dev/) for clean, scale-independent vector icons.
-* **Transitions**: Micro-interactions, slide-outs, and modal fade scales via standard Tailwind transition animations.
-
-### **Backend**
-* **Core**: Python 3 standard library `http.server` providing a lightweight, low-overhead HTTP REST service.
-* **Database**: SQLite3 (`sqlite3`) storing user data and task records securely locally with transactional query safety.
-* **Execution**: Automated runtime dependency management using `npm` wrappers for python commands.
+| Category | Technologies |
+|-----------|--------------|
+| 🎨 Frontend | HTML5, CSS3, JavaScript |
+| ⚙️ Backend | Python |
+| 🗄️ Database | SQLite |
+| 📊 Charts | Chart.js |
+| 🎯 Icons | Lucide Icons |
+| 🔧 Version Control | Git & GitHub |
 
 ---
 
-## 💾 Database Schema
+## 📂 Project Structure
 
-The SQLite3 relational database (`tasks.db`) manages two main tables:
-
-### 1. `users` Table
-| Column | Type | Constraints | Description |
-| :--- | :--- | :--- | :--- |
-| `user_id` | `INTEGER` | `PRIMARY KEY AUTOINCREMENT` | Unique user identifier |
-| `employee_name` | `TEXT` | `NOT NULL` | The full name of the registered employee |
-| `username` | `TEXT` | `UNIQUE NOT NULL` | System login credential |
-| `password_hash` | `TEXT` | `NOT NULL` | Hashed password string |
-
-### 2. `tasks` Table
-| Column | Type | Constraints | Description |
-| :--- | :--- | :--- | :--- |
-| `task_id` | `INTEGER` | `PRIMARY KEY AUTOINCREMENT` | Unique task identifier |
-| `user_id` | `INTEGER` | `FOREIGN KEY` references `users(user_id)` | Owner identifier |
-| `title` | `TEXT` | `NOT NULL` | Title of the task |
-| `description` | `TEXT` | | Optional rich description text |
-| `due_date` | `TEXT` | | Due date stored as ISO YYYY-MM-DD |
-| `priority` | `TEXT` | | `Low`, `Medium`, or `High` |
-| `status` | `TEXT` | `DEFAULT 'pending'` | `pending` or `completed` |
-| `category` | `TEXT` | `DEFAULT 'Work'` | Categorized type of activity |
-| `repeat` | `TEXT` | `DEFAULT 'None'` | Recurrence pattern |
-| `reminder` | `TEXT` | `DEFAULT 'None'` | Trigger state |
-| `employee_name` | `TEXT` | | Cached name of assigned owner |
-| `created_at` | `TEXT` | | Creation timestamp |
-| `completed_date` | `TEXT` | | Task completion timestamp |
-
----
-
-## 📡 API Endpoints Reference
-
-All API endpoints return standard `application/json` payloads.
-
-### **Authentication**
-* **`POST /api/register`**: Registers a new user. Expects `employee_name`, `username`, and `password`.
-* **`POST /api/login`**: Authenticates credentials. Returns user object on success.
-
-### **Task Management**
-* **`GET /api/tasks`**: Fetches all tasks assigned to the authenticated user.
-* **`POST /api/tasks`**: Creates a new task.
-* **`PUT /api/tasks/:id`**: Updates an existing task (e.g., status, description, title).
-* **`DELETE /api/tasks/:id`**: Permanently deletes a task.
-
-### **Database Monitoring**
-* **`GET /api/db/tables`**: Queries internal SQLite tables (`users`, `tasks`) and returns serialized datasets for monitoring.
-
----
-
-## 🚀 Getting Started
-
-### **Prerequisites**
-- Ensure you have **Python 3** and **Node.js/npm** installed on your server environment.
-
-### **Development Run**
-1. Run the local development server:
-   ```bash
-   npm run dev
-   ```
-2. Open your preferred browser and navigate to:
-   ```
-   http://localhost:3000
-   ```
-
-### **Production Deployment**
-Compile frontend resources and launch Python directly:
-```bash
-npm run build
-npm start
+```text
+Task-Management-Dashboard/
+│
+├── app.py
+├── auth.py
+├── task.py
+├── index.html
+├── script.js
+├── style.css
+├── package.json
+├── README.md
+│
+├── images1/
+│   ├── login.png
+│   ├── dashboard.png
+│   ├── my_tasks.png
+│   ├── create_task1.png
+│   ├── create_task2.png
+│   ├── calendar.png
+│   ├── analytics.png
+│   ├── database.png
+│   └── settings.png
+│
+└── metadata.json
 ```
+
+---
+
+# 📸 Application Screenshots
+
+## 🔐 Login
+
+<p align="center">
+<img src="images1/login.png" width="900">
+</p>
+
+---
+
+## 📊 Dashboard
+
+<p align="center">
+<img src="images1/dashboard.png" width="900">
+</p>
+
+---
+
+## ✅ My Tasks
+
+<p align="center">
+<img src="images1/my_tasks.png" width="900">
+</p>
+
+---
+
+## ➕ Create New Task
+
+<p align="center">
+<img src="images1/create_task1.png" width="900">
+</p>
+
+<p align="center">
+<img src="images1/create_task2.png" width="900">
+</p>
+
+---
+
+## 📅 Calendar
+
+<p align="center">
+<img src="images1/calendar.png" width="900">
+</p>
+
+---
+
+## 📈 Analytics
+
+<p align="center">
+<img src="images1/analytics.png" width="900">
+</p>
+
+---
+
+## 🗄️ Database Explorer
+
+<p align="center">
+<img src="images1/database.png" width="900">
+</p>
+
+---
+
+## ⚙️ Settings
+
+<p align="center">
+<img src="images1/settings.png" width="900">
+</p>
+
+---
+
+## 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/DIVYA03-TECH/Task-Management-System.git
+```
+
+Go to the project folder
+
+```bash
+cd Task-Management-System
+```
+
+Run the application
+
+```bash
+python app.py
+```
+
+Open your browser
+
+```
+http://localhost:3000
+```
+
+---
+
+## 🎯 Future Enhancements
+
+- Google Authentication
+- Email Notifications
+- File Attachments
+- Export Tasks (CSV/PDF)
+- Cloud Database Integration
+- Drag-and-Drop Task Board
+- Mobile Responsive Improvements
+
+---
+
+## 📚 Learning Outcomes
+
+- Full Stack Web Development
+- Python Backend Development
+- REST API Development
+- SQLite Database Design
+- CRUD Operations
+- Authentication & Authorization
+- Dashboard Development
+- Data Visualization
+- Git & GitHub Workflow
+
+---
+
+## 👩‍💻 Author
+
+**Divya Lokwani**
+
+- GitHub: https://github.com/DIVYA03-TECH
+- LinkedIn: *(Add your LinkedIn profile here)*
