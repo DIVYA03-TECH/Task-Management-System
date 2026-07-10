@@ -11,7 +11,7 @@
 
 ## 📖 Overview
 
-Task Management Dashboard is a full-stack web application built using **Python, HTML, CSS, JavaScript, and SQLite**. It helps users organize, track, and manage tasks efficiently through an intuitive interface with analytics, calendar integration, and secure authentication.
+Task Management Dashboard is a web application built using **Python, HTML, CSS, JavaScript, and SQLite**. It helps users organize, track, and manage tasks efficiently through an intuitive interface with analytics, calendar integration, and secure authentication.
 
 ## ✨ Features
 ### 🔐 Authentication
@@ -140,7 +140,7 @@ Task-Management-Dashboard/
 ## 📈 Analytics
 
 <p align="center">
-<img src="images1/analytics.png" width="900">
+<img src="images1/anayltics.png" width="900">
 </p>
 
 ---
@@ -171,7 +171,7 @@ Task-Management-Dashboard/
 
 ## 📚 Learning Outcomes
 
-- Full Stack Web Development
+-  Web Development
 - Python Backend Development
 - SQLite Database Design
 - CRUD Operations
@@ -181,9 +181,6 @@ Task-Management-Dashboard/
 - Git & GitHub Workflow
 
 ## 👩‍💻 Author
-DIVYA LOKWANI
-
 **Divya Lokwani**
-
 - GitHub: https://github.com/DIVYA03-TECH
-- LinkedIn: *(Add your LinkedIn profile here)*
+
