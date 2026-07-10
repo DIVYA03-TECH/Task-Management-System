@@ -1,9 +1,4 @@
 # 📋 Task Management Dashboard
-
-<p align="center">
-  <img src="images1/dashboard.png" width="100%" alt="Dashboard Preview"/>
-</p>
-
 <p align="center">
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
@@ -14,16 +9,11 @@
 
 </p>
 
----
-
 ## 📖 Overview
 
 Task Management Dashboard is a full-stack web application built using **Python, HTML, CSS, JavaScript, and SQLite**. It helps users organize, track, and manage tasks efficiently through an intuitive interface with analytics, calendar integration, and secure authentication.
 
----
-
 ## ✨ Features
-
 ### 🔐 Authentication
 - User Registration
 - Secure Login
@@ -64,10 +54,7 @@ Task Management Dashboard is a full-stack web application built using **Python, 
 - Theme Switching
 - Workspace Preferences
 
----
-
 ## 🛠️ Technology Stack
-
 | Category | Technologies |
 |-----------|--------------|
 | 🎨 Frontend | HTML5, CSS3, JavaScript |
@@ -77,10 +64,7 @@ Task Management Dashboard is a full-stack web application built using **Python, 
 | 🎯 Icons | Lucide Icons |
 | 🔧 Version Control | Git & GitHub |
 
----
-
 ## 📂 Project Structure
-
 ```text
 Task-Management-Dashboard/
 │
@@ -106,8 +90,6 @@ Task-Management-Dashboard/
 │
 └── metadata.json
 ```
-
----
 
 # 📸 Application Screenshots
 
@@ -177,36 +159,6 @@ Task-Management-Dashboard/
 <img src="images1/settings.png" width="900">
 </p>
 
----
-
-## 🚀 Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/DIVYA03-TECH/Task-Management-System.git
-```
-
-Go to the project folder
-
-```bash
-cd Task-Management-System
-```
-
-Run the application
-
-```bash
-python app.py
-```
-
-Open your browser
-
-```
-http://localhost:3000
-```
-
----
-
 ## 🎯 Future Enhancements
 
 - Google Authentication
@@ -217,13 +169,10 @@ http://localhost:3000
 - Drag-and-Drop Task Board
 - Mobile Responsive Improvements
 
----
-
 ## 📚 Learning Outcomes
 
 - Full Stack Web Development
 - Python Backend Development
-- REST API Development
 - SQLite Database Design
 - CRUD Operations
 - Authentication & Authorization
@@ -231,9 +180,8 @@ http://localhost:3000
 - Data Visualization
 - Git & GitHub Workflow
 
----
-
 ## 👩‍💻 Author
+DIVYA LOKWANI
 
 **Divya Lokwani**
 
