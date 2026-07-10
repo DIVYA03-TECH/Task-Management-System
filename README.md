@@ -11,7 +11,7 @@
 
 ## 📖 Overview
 
-Task Management Dashboard is a web application built using **Python, HTML, CSS, JavaScript, and SQLite**. It helps users organize, track, and manage tasks efficiently through an intuitive interface with analytics, calendar integration, and secure authentication.
+Task Management is a web application built using **Python, HTML, CSS, JavaScript, and SQLite**. It helps users organize, track, and manage tasks efficiently through an intuitive interface with analytics, calendar integration, and secure authentication.
 
 ## ✨ Features
 ### 🔐 Authentication
