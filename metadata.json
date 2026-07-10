@@ -1,0 +1,6 @@
+{
+  "name": "Task Management Dashboard",
+  "description": "A modern task management dashboard with analytics, interactive calendar, task controls, and dynamic charts inspired by Organizo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
